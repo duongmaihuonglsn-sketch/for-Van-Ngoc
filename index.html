@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Vân Ngọc ♡ Thanh Hùng</title>
+
+
+<style>
+
+/* =========================
+   CÀI ĐẶT CHUNG
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: #faf8f5;
+
+    color: #403a36;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* =========================
+   MÀN HÌNH MỞ ĐẦU
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.hero img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center 35%;
+
+    filter: brightness(0.78);
+
+    animation:
+        zoom 12s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.02),
+            rgba(0,0,0,0.08) 45%,
+            rgba(0,0,0,0.68)
+        );
+}
+
+
+.cover {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+    padding:
+        30px
+        22px
+        60px;
+
+    animation:
+        appear 1.5s ease;
+}
+
+
+/* =========================
+   DÒNG NHỎ
+========================= */
+
+.small-title {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   TÊN CÔ DÂU CHÚ RỂ
+========================= */
+
+h1 {
+
+    font-size:
+        clamp(
+            38px,
+            9vw,
+            70px
+        );
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    margin:
+        0 0 12px;
+}
+
+
+.subtitle {
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   NÚT MỞ MÓN QUÀ
+========================= */
+
+.open-button {
+
+    display: inline-block;
+
+    padding:
+        14px
+        30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.85);
+
+    border-radius: 50px;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(5px);
+
+    cursor: pointer;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+.open-button:hover {
+
+    background:
+        rgba(255,255,255,0.25);
+
+    transform:
+        scale(1.03);
+}
+
+
+/* =========================
+   NỘI DUNG
+========================= */
+
+.content {
+
+    display: none;
+
+    max-width: 760px;
+
+    margin: auto;
+
+    padding:
+        75px
+        24px
+        90px;
+
+    text-align: center;
+}
+
+
+.content.show {
+
+    display: block;
+
+    animation:
+        fadeUp 1s ease;
+}
+
+
+/* =========================
+   TIÊU ĐỀ NHỎ
+========================= */
+
+.label {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #a09287;
+
+    margin-bottom: 15px;
+}
+
+
+h2 {
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    margin:
+        0 0 28px;
+}
+
+
+/* =========================
+   LỜI CHÚC
+========================= */
+
+.letter {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 32px;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    box-shadow:
+        0 10px 35px
+        rgba(70,50,40,0.08);
+}
+
+
+/* =========================
+   KHU VỰC NHẠC
+========================= */
+
+.music {
+
+    margin-top: 65px;
+}
+
+
+.music-card {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(70,50,40,0.08);
+}
+
+
+.music-title {
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+
+.music-artist {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #9a918b;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   NÚT PLAY
+========================= */
+
+.music-button {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #8f8177;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+.music-button:hover {
+
+    transform:
+        scale(1.08);
+}
+
+
+.music-status {
+
+    margin-top: 15px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    color: #9a918b;
+}
+
+
+/* =========================
+   LỜI KẾT
+========================= */
+
+.closing {
+
+    margin-top: 70px;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.9;
+}
+
+
+.names {
+
+    margin-top: 25px;
+
+    font-size: 27px;
+
+    font-style: normal;
+}
+
+
+.footer {
+
+    margin-top: 60px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #aaa19b;
+}
+
+
+/* =========================
+   HIỆU ỨNG
+========================= */
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes zoom {
+
+    from {
+
+        transform:
+            scale(1);
+    }
+
+    to {
+
+        transform:
+            scale(1.05);
+    }
+}
+
+
+/* =========================
+   ĐIỆN THOẠI
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero img {
+
+        object-position:
+            center 30%;
+    }
+
+    .cover {
+
+        padding-bottom:
+            50px;
+    }
+
+    h1 {
+
+        font-size: 40px;
+    }
+
+    .subtitle {
+
+        font-size: 15px;
+    }
+
+    .letter {
+
+        padding: 25px;
+
+        font-size: 16px;
+    }
+
+    .content {
+
+        padding-top: 55px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     ẢNH BÌA
+========================= -->
+
+<section class="hero">
+
+
+    <img
+        src="wedding.jpg"
+        alt="Vân Ngọc và Thanh Hùng"
+    >
+
+
+    <div class="overlay"></div>
+
+
+    <div class="cover">
+
+
+        <div class="small-title">
+
+            A LITTLE GIFT FOR YOUR FOREVER
+
+        </div>
+
+
+        <h1>
+
+            Vân Ngọc ♡ Thanh Hùng
+
+        </h1>
+
+
+        <div class="subtitle">
+
+            Một món quà nhỏ dành cho
+            ngày đặc biệt của hai bạn
+
+        </div>
+
+
+        <div
+            class="open-button"
+            onclick="openGift()"
+        >
+
+            MỞ MÓN QUÀ ♡
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     NHẠC
+========================= -->
+
+<audio
+    id="weddingMusic"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="Beautiful In White_128k (mp3cut.net).mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<!-- =========================
+     NỘI DUNG
+========================= -->
+
+<main
+    id="content"
+    class="content"
+>
+
+
+    <!-- =====================
+         LỜI CHÚC
+    ====================== -->
+
+    <div class="label">
+
+        A LETTER FOR YOU
+
+    </div>
+
+
+    <h2>
+
+        Gửi Vân Ngọc & Thanh Hùng
+
+    </h2>
+
+
+    <div class="letter">
+
+
+        Chúc mừng hạnh phúc nha Ngọc nhaaa! ❤️
+
+
+        <br><br>
+
+
+        Đến giờ phút này t vẫn rất là bất ngờ
+        khi nghe tin m sắp lấy chồng đó huhu.
+
+
+        <br><br>
+
+
+        By the way, t cũng rất vui khi m đã
+        tìm được bến đỗ của đời mình nèeee
+        🫶🫶🫶
+
+
+        <br><br>
+
+
+        Mong m với chồng m sẽ luôn yêu thương,
+        bao dung lẫn nhau, sẽ mãi ở bên nhau
+        trong mọi chặng đường của cuộc sống này
+
+
+        <br><br>
+
+
+        Chúc cho hành trình phía trước của m
+        thật nhiều may mắn, bình an,
+        thật nhiều tiếng cười và cùng những
+        khoảnh khắc đáng nhớ.
+
+
+        <br><br>
+
+
+        Cuối cùng thì ....
+        <strong>
+            PHẢI THẬT HẠNH PHÚC NHA NGỌC ƠI!!
+        </strong>
+        💗💗💗
+
+
+    </div>
+
+
+
+    <!-- =====================
+         BÀI HÁT
+    ====================== -->
+
+    <section class="music">
+
+
+        <div class="label">
+
+            A SONG FOR YOU
+
+        </div>
+
+
+        <h2>
+
+            Beautiful in White
+
+        </h2>
+
+
+        <div class="music-card">
+
+
+            <div class="music-title">
+
+                Beautiful in White
+
+            </div>
+
+
+            <div class="music-artist">
+
+                Shane Filan
+
+            </div>
+
+
+            <button
+                class="music-button"
+                id="musicButton"
+                onclick="toggleMusic()"
+            >
+
+                ▶
+
+            </button>
+
+
+            <div
+                class="music-status"
+                id="musicStatus"
+            >
+
+                Bấm để phát nhạc ♡
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================
+         LỜI KẾT
+    ====================== -->
+
+    <section class="closing">
+
+
+        May your forever be as beautiful
+        as this moment. 🤍
+
+
+        <div class="names">
+
+            Vân Ngọc ♡ Thanh Hùng
+
+        </div>
+
+
+    </section>
+
+
+    <div class="footer">
+
+        MADE WITH LOVE · FOR YOUR FOREVER
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================
+   LẤY ĐỐI TƯỢNG NHẠC
+========================= */
+
+const music =
+    document.getElementById(
+        "weddingMusic"
+    );
+
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+const musicStatus =
+    document.getElementById(
+        "musicStatus"
+    );
+
+
+const content =
+    document.getElementById(
+        "content"
+    );
+
+
+/* =========================
+   MỞ MÓN QUÀ
+========================= */
+
+function openGift() {
+
+
+    /* 
+       Hiện nội dung ngay
+       không chờ nhạc
+    */
+
+    content.classList.add("show");
+
+
+    /*
+       Bắt đầu phát nhạc ngay
+       sau thao tác bấm của người dùng
+    */
+
+    music.play()
+        .then(function() {
+
+
+            musicButton.innerHTML =
+                "❚❚";
+
+
+            musicStatus.innerHTML =
+                "Đang phát nhạc ♡";
+
+
+        })
+        .catch(function() {
+
+
+            musicStatus.innerHTML =
+                "Bấm ▶ để phát nhạc ♡";
+
+
+        });
+
+
+    /*
+       Cuộn xuống phần lời chúc
+    */
+
+    setTimeout(function() {
+
+
+        content.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+
+    }, 100);
+
+}
+
+
+
+/* =========================
+   PLAY / PAUSE
+========================= */
+
+function toggleMusic() {
+
+
+    if (music.paused) {
+
+
+        music.play()
+            .then(function() {
+
+
+                musicButton.innerHTML =
+                    "❚❚";
+
+
+                musicStatus.innerHTML =
+                    "Đang phát nhạc ♡";
+
+
+            });
+
+
+    } else {
+
+
+        music.pause();
+
+
+        musicButton.innerHTML =
+            "▶";
+
+
+        musicStatus.innerHTML =
+            "Nhạc đang tạm dừng";
+
+
+    }
+
+}
+
+
+/* =========================
+   CẬP NHẬT NÚT KHI NHẠC KẾT THÚC
+========================= */
+
+music.addEventListener(
+    "play",
+    function() {
+
+        musicButton.innerHTML =
+            "❚❚";
+
+        musicStatus.innerHTML =
+            "Đang phát nhạc ♡";
+
+    }
+);
+
+
+music.addEventListener(
+    "pause",
+    function() {
+
+        musicButton.innerHTML =
+            "▶";
+
+    }
+);
+
+
+/* =========================
+   XỬ LÝ LỖI FILE NHẠC
+========================= */
+
+music.addEventListener(
+    "error",
+    function() {
+
+        musicStatus.innerHTML =
+            "Không tải được bài hát ♡";
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
